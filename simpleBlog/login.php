@@ -2,6 +2,10 @@
 include "config.php";
 session_start();
 
+if($_SESSION['is_login']){
+    header('Location: index.php');
+}
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -27,5 +31,26 @@ if($username && $password){
     }
     $conn->close();
 }
-header("Location: ./login.html");
-exit();
+
+?>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Login</title>  
+    <link rel="stylesheet" type="text/css" href="./static/index.css"/>  
+    <script src="./static/main.js"></script>
+</head>  
+<body>  
+    <div id="login">  
+        <h1>Login</h1>  
+        <form method="POST">  
+            <input type="text" required="required" placeholder="用户名" name="username"></input>  
+            <input type="password" required="required" placeholder="密码" name="password"></input>  
+            <button class="but" value="submit">登录</button>  
+        </form> 
+        <br>
+        <button class="but" onclick="window.location.href='register.php'">注册</button> 
+    </div>  
+</body>  
+</html>

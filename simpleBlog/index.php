@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['is_login'])){
-    header("Location: ./login.html");
+    header("Location: ./login.php");
     exit();
 }
 ?>
@@ -11,7 +11,7 @@ if(!isset($_SESSION['is_login'])){
 	<head>
 		<title>HOME</title>
 		<link rel="stylesheet" href="/static/home.css" />
-		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		<noscript><link rel="stylesheet" href="/static/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
