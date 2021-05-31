@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "psr-4": {
+            "app\\":"application/",
+            "mytp\\":"framework/library/mytp/"
+        }
+    },
+    "require": {
+        "topthink/think-helper": "~1.0",
+        "smarty/smarty": "~3.1"
+    }
+}
